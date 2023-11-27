@@ -85,6 +85,5 @@ namespace SpecFlowProj.StepDefinitions
         {
             Assert.That(driver.Title.Contains(title));
         }
-
     }
 }
