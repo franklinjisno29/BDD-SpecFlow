@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowProj", "SpecFlowProj\SpecFlowProj.csproj", "{7103D8F9-68BE-4391-BD2B-692BA8B5115A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedInTests", "LinkedInTests\LinkedInTests.csproj", "{CA88DA9A-49CE-4DDF-A12A-99437D9A7DD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedInTests", "LinkedInTests\LinkedInTests.csproj", "{CA88DA9A-49CE-4DDF-A12A-99437D9A7DD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BunnyCartBDDTest", "BunnyCartBDDTest\BunnyCartBDDTest.csproj", "{EFF67E57-8735-4F97-9722-21DFCE02D7EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CA88DA9A-49CE-4DDF-A12A-99437D9A7DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA88DA9A-49CE-4DDF-A12A-99437D9A7DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA88DA9A-49CE-4DDF-A12A-99437D9A7DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF67E57-8735-4F97-9722-21DFCE02D7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF67E57-8735-4F97-9722-21DFCE02D7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF67E57-8735-4F97-9722-21DFCE02D7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF67E57-8735-4F97-9722-21DFCE02D7EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
