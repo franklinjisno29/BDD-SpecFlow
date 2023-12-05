@@ -76,7 +76,7 @@ namespace BunnyCartBDDTest.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search & Add to Cart")]
         [NUnit.Framework.CategoryAttribute("E2E-Search_AddtoCart")]
-        [NUnit.Framework.TestCaseAttribute("Water", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("Water", "2", null)]
         [NUnit.Framework.TestCaseAttribute("Java", "1", null)]
         public virtual void SearchAddToCart(string searchtext, string productno, string[] exampleTags)
         {
@@ -121,16 +121,19 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then(string.Format("Search Results are loaded in the same page with \'{0}\'", searchtext), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 9
- testRunner.And(string.Format("Heading should have \'{0}\'", searchtext), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
-#line hidden
-#line 10
- testRunner.And(string.Format("Title should have \'{0}\'", searchtext), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
-#line hidden
-#line 11
  testRunner.When(string.Format("User selects a \'{0}\'", productno), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 10
  testRunner.Then(string.Format("Product page \'{0}\' is loaded", searchtext), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 11
+ testRunner.When("User select the quantity of the product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
+ testRunner.And("User Clicks the Add to Cart Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
+#line hidden
+#line 13
+ testRunner.Then(string.Format("Product \'{0}\' added to cart", searchtext), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

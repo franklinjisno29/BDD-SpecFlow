@@ -13,7 +13,7 @@ namespace BunnyCartBDDTest.Utilities
 {
     internal class CoreCodes
     {
-        protected void TakeScreeshot(IWebDriver driver)
+        protected void TakeScreenshot(IWebDriver driver)
         {
             ITakesScreenshot its = (ITakesScreenshot)driver;
             Screenshot screenshot = its.GetScreenshot();

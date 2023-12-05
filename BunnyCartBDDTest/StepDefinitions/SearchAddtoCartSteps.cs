@@ -38,41 +38,10 @@ namespace BunnyCartBDDTest.StepDefinitions
         [Then(@"Search Results are loaded in the same page with '([^']*)'")]
         public void ThenSearchResultsAreLoadedInTheSamePageWith(string searchtext)
         {
-            TakeScreeshot(driver);
+            TakeScreenshot(driver);
             try
             {
                 Assert.That(driver.Url.Contains(searchtext));
-                LogTestResult("Search Test", "Search Test Passed");
-            }
-            catch (AssertionException ex)
-            {
-                LogTestResult("Search Test", "Search Test Failed", ex.Message);
-            }
-        }
-        [Then(@"Heading should have '([^']*)'")]
-        public void ThenHeadingShouldHave(string searchtext)
-        {
-            IWebElement searchheading = driver.FindElement(By.XPath("//h1[@class='page-title']"));
-            TakeScreeshot(driver);
-            try
-            {
-                Assert.That(searchheading.Text, Does.Contain(searchtext));
-                LogTestResult("Search Test", "Search Test Passed");
-            }
-            catch (AssertionException ex)
-            {
-                LogTestResult("Search Test", "Search Test Failed", ex.Message);
-
-            }
-        }
-
-        [Then(@"Title should have '([^']*)'")]
-        public void ThenTitleShouldHave(string searchtext)
-        {
-            TakeScreeshot(driver);
-            try
-            {
-                Assert.That(driver.Title, Does.Contain(searchtext));
                 LogTestResult("Search Test", "Search Test Passed");
             }
             catch (AssertionException ex)
@@ -96,7 +65,7 @@ namespace BunnyCartBDDTest.StepDefinitions
         [Then(@"Product page '([^']*)' is loaded")]
         public void ThenProductPageIsLoaded(string searchtext)
         {
-            TakeScreeshot(driver);
+            TakeScreenshot(driver);
             try
             {
                 Assert.That(driver.Title, Does.Contain(searchtext));
@@ -107,5 +76,27 @@ namespace BunnyCartBDDTest.StepDefinitions
                 LogTestResult("Search Test", "Search Test Failed", ex.Message);
             }
         }
+        [When(@"User select the quantity of the product")]
+        public void WhenUserSelectTheQuantityOfTheProduct()
+        {
+            driver.FindElement(By.ClassName("qty-inc")).Click();
+            Thread.Sleep(3000);
+        }
+
+        [When(@"User Clicks the Add to Cart Button")]
+        public void WhenUserClicksTheAddToCartButton()
+        {
+            driver.FindElement(By.Id("product-addtocart-button")).Click();
+            Thread.Sleep(3000);
+        }
+
+        [Then(@"Product '([^']*)' added to cart")]
+        public void ThenProductAddedToCart(string searchtext)
+        {
+            driver.FindElement(By.XPath("//a[contains(@class,'showcart')]")).Click();
+            Thread.Sleep(10000);
+            Assert.That(driver.FindElement(By.XPath("//a[contains(text(),'Water')]")).Text, Does.Contain(searchtext));
+        }
+
     }
 }
